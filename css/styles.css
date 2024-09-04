@@ -1,0 +1,171 @@
+/* styles.css */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh; /* Asegura que el cuerpo tenga al menos la altura completa de la ventana */
+    padding-top: 0px; /* Asegura que el contenido no quede oculto debajo del navbar fijo */
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro con 80% de opacidad */
+    color: #fff; /* Texto blanco */
+    position: fixed; /* Fijo en la parte superior de la página */
+    width: 100%; /* Ancho completo */
+    height: 30px;
+    top: 0; /* Alineado al top de la página */
+    left: 0; /* Alineado al left de la página */
+    z-index: 1000; /* Asegura que esté sobre otros elementos */
+    padding: 10px 20px; /* Espaciado interno */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombra sutil para mejor visibilidad */
+}
+
+.navbar {
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan si es necesario */
+}
+
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Espacio entre los enlaces */
+    margin-right: 60px;
+}
+
+.nav-links li {
+    margin: 0;
+    padding-top: 5px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff; /* Texto blanco en los enlaces */
+    font-weight: bold;
+    font-size: 16px; /* Ajusta el tamaño de la fuente si es necesario */
+     
+}
+
+.nav-links a:hover {
+    color: #ddd; /* Color gris claro cuando se pasa el ratón sobre el enlace */
+}
+
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espacio entre el contenedor de banderas y redes sociales */
+    margin-left: 40px;
+}
+
+.lang-icons {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Espacio reducido entre las banderas */
+    margin-right: 80px; /* Espacio entre las banderas y los íconos de redes sociales */
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espacio entre los íconos de redes sociales */
+}
+
+.lang-icon img,.social-icon img{
+    width: 24px; /* Ajusta el tamaño de los íconos según sea necesario */
+    height: 24px;
+    margin-right: 20px;
+
+}
+
+
+.lang-icon img:hover, .social-icon img:hover {
+    opacity: 0.7; /* Efecto de opacidad al pasar el ratón */
+}
+
+.social-icon i {
+    font-size: 24px; /* Ajusta el tamaño del ícono */
+    color: #fff; /* Color blanco para los íconos */
+    transition: color 0.3s ease;
+}
+
+.social-icon i:hover {
+    color: #2fd5eb; /* Color al pasar el ratón sobre el ícono */
+}
+
+
+
+
+/* Nueva sección para la imagen y el texto centrado */
+main {
+    position: relative; /* Necesario para posicionar el contenido absoluto dentro de main */
+    height: 100vh; /* Hace que el main ocupe toda la altura de la ventana */
+}
+
+.image-container {
+    position: absolute; /* Posiciona la imagen con respecto al contenedor principal */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Ocupa la mitad superior de la ventana */
+    overflow: hidden;
+    display: flex; /* Añade flex para centrar la imagen si es necesario */
+}
+
+.image-container::before {
+    content: ''; /* Necesario para crear el pseudo-elemento */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Color negro con 50% de opacidad */
+    z-index: 1; /* Coloca la capa sobre la imagen */
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsión */
+    z-index: 0; /* Coloca la imagen debajo de la capa de opacidad */
+}
+
+.intro-container {
+    position: absolute; /* Posiciona el texto con respecto al contenedor principal */
+    top: 50%; /* Comienza en la mitad de la altura del contenedor */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el texto tanto vertical como horizontalmente */
+    text-align: center;
+    color: #fff; /* Texto blanco para el contraste con la imagen */
+    padding: 20px;
+    z-index: 10; /* Asegura que el texto esté sobre la imagen */
+}
+
+.intro-container h1 {
+    font-size: 2.5em; /* Ajusta el tamaño del encabezado */
+    margin-bottom: 10px;
+}
+
+.intro-container p {
+    font-size: 1.2em; /* Ajusta el tamaño del texto */
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    color: #fff;
+    background-color: #007bff; /* Color de fondo del botón */
+    text-decoration: none;
+    border-radius: 25px; /* Bordes curveados del botón */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Color del botón al pasar el ratón */
+    transform: scale(1.05); /* Efecto de agrandamiento al pasar el ratón */
+}
